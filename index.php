@@ -24,11 +24,11 @@ $paragrafoModificato = str_replace($badword, "***", $paragrafo);
   <!-- Lunghezza del paragrafo originale -->
   <p>Il paragrafo contiene <strong><?php echo strlen($paragrafo) ?></strong> caratteri.</p>
   <!-- Istruzioni per modificare -->
-  <p>Per censurare una lettera/parola, copia all'interno dell'URL: <strong>localhost:8888/php-badwords/index.php?badword= </strong><em>lettera/parola che vuoi censurare</em></p>
+  <p>Per censurare una lettera/parola, copia all'interno dell'URL: <strong><u>localhost:8888/php-badwords/index.php?badword=</u></strong><em>lettera/parola che vuoi censurare</em></p>
   <!-- Mostra lettera/parola censurata -->
   <p>Hai censurato la lettera/parola: <strong>"<?php echo $badword ?>"</strong>.</p>
   <!-- Paragrafo censurato -->
-  <p><?php echo $paragrafoModificato ?></p>
+  <p><strong>Paragrafo censurato: </strong><?php echo $paragrafoModificato ?></p>
   <!-- Lunghezza del paragrafo censurato -->
   <p>Il paragrafo censurato contiene <strong><?php echo strlen($paragrafoModificato) ?></strong> caratteri.</p>
 </body>
