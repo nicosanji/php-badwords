@@ -1,3 +1,13 @@
+<?php
+// Variabile -> paragrafo originale
+$paragrafo = "Ei fu. Siccome immobile, dato il mortal sospiro, stette la spoglia immemore orba di tanto spiro, 
+              così percossa, attonita la terra al nunzio sta, muta pensando all'ultima ora dell'uom fatale.";
+// Variabile -> $_GET[""]; individua la parola da censurare 
+$badword = $_GET["badword"];
+// Variabile -> paragrafo modificato con metodo str_replace();
+$paragrafoModificato = str_replace($badword, "***", $paragrafo);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +19,18 @@
 </head>
 
 <body>
-  <p>php first paragraph</p>
+  <!-- Paragrafo originale -->
+  <p><strong>Paragrafo originale: </strong><?php echo $paragrafo ?></p>
+  <!-- Lunghezza del paragrafo originale -->
+  <p>Il paragrafo contiene <strong><?php echo strlen($paragrafo) ?></strong> caratteri.</p>
+  <!-- Istruzioni per modificare -->
+  <p>Per censurare una lettera/parola, copia all'interno dell'URL: <strong>localhost:8888/php-badwords/index.php?badword= </strong><em>lettera/parola che vuoi censurare</em></p>
+  <!-- Mostra lettera/parola censurata -->
+  <p>Hai censurato la lettera/parola: <strong>"<?php echo $badword ?>"</strong>.</p>
+  <!-- Paragrafo censurato -->
+  <p><?php echo $paragrafoModificato ?></p>
+  <!-- Lunghezza del paragrafo censurato -->
+  <p>Il paragrafo censurato contiene <strong><?php echo strlen($paragrafoModificato) ?></strong> caratteri.</p>
 </body>
 
 </html>
